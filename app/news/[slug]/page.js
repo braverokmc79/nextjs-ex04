@@ -1,11 +1,16 @@
 
 import React from 'react'
 import { DUMMY_NEWS } from '../dummy-news';
+import { notFound } from 'next/navigation';
 
 const NewsDetailPage = ({params}) => {
   const newsSlug =params.slug;
   console.log("newsSlug: ", newsSlug);
   const newsItem=DUMMY_NEWS.find((newsItem)=>newsItem.id===newsSlug);
+  
+  if(!newsItem){
+    notFound();
+  }
 
   return (
     <article className='news-article'>
