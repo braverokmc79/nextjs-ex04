@@ -1,9 +1,10 @@
-import React from "react";
+"use client";
 
-import { notFound } from "next/navigation";
-import { DUMMY_NEWS } from "@/app/news/dummy-news";
+import { notFound, useRouter } from "next/navigation";
+import { DUMMY_NEWS } from "@/app/(content)/news/dummy-news";
 
 const ModalImagePage = ({ params }) => {
+  const router = useRouter();
   const newsItemSlug = params.slug;
   const newsItem = DUMMY_NEWS.find((newsItem) => newsItem.id === newsItemSlug);
 
@@ -13,13 +14,16 @@ const ModalImagePage = ({ params }) => {
 
   return (
     <>
-      <div className="modal-backdrop"></div>        
+      <div className="modal-backdrop" onClick={router.back}></div>
       <dialog className="modal" open>
         <div className="fullscreen-image">
-          <img src={`/images/news/${newsItem.image}`} alt={newsItem.title} className="width100"/>
+          <img
+            src={`/images/news/${newsItem.image}`}
+            alt={newsItem.title}
+            className="width100"
+          />
         </div>
       </dialog>
-
     </>
   );
 };
