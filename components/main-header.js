@@ -10,6 +10,9 @@ const MainHeader = () => {
       <nav>
         <ul>
           <li>
+            <Link href="/archive">archive</Link>
+          </li>
+          <li>
             <Link href="/news">News</Link>
           </li>
         </ul>
