@@ -1,19 +1,18 @@
-import Link from "next/link";
-import React from "react";
+import NavLink from "./nav-link";
 
 const MainHeader = () => {
   return (
     <header id="main-header">
       <div id="logo">
-        <Link href="/">NextNews</Link>
+        <NavLink href="/">NextNews</NavLink>
       </div>
       <nav>
         <ul>
           <li>
-            <Link href="/archive">archive</Link>
+            <NavLink href="/archive">Archive</NavLink>
           </li>
           <li>
-            <Link href="/news">News</Link>
+            <NavLink href="/news">News</NavLink>
           </li>
         </ul>
       </nav>
