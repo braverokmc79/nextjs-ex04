@@ -3,4 +3,4 @@ function ModalDefaultPage() {
   return null;
 }
 
-export default ModalDefaultPage
+export default ModalDefaultPage;

@@ -5,7 +5,7 @@ const NewsList = ({news}) => {
   return (
     <ul className='news-list'>
         {news.map((newsItem) => (
-          <li><Link key={newsItem.id} href={`/news/${newsItem.id}`} >
+          <li key={newsItem.id}><Link  href={`/news/${newsItem.id}`} >
              <img src={`/images/news/${newsItem.image}`}
                 alt={newsItem.title}   />              
             <span>{newsItem.title}</span>
